@@ -1,0 +1,12 @@
+[
+  {
+    "titre" : "Front-End",
+    "color" : "#FF5733",
+    "id" : 0
+  },
+  {
+    "titre" : "Back-End",
+    "color" : "#003DB1",
+    "id" : 1
+  }
+]

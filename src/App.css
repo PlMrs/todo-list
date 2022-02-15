@@ -1,0 +1,56 @@
+*{
+  padding:0;
+  margin:0;
+}
+.form{
+  clear:both
+}
+.todo-list ul{
+  list-style-type: none;
+}
+.todo-list ul li:first-child ul > li:first-child{
+  border-top:none;
+}
+.todo-list > ul > li ul:first-child{
+  width: 70%;
+  float: left;
+}
+.todo-list > ul > li ul{
+  width: 30%;
+  float: right;
+}
+.todo-list > ul > li ul > li:first-child{
+  border-top: 1px solid black;
+}
+.todo-list ul li:first-child p:first-child span{
+  margin-right:70px;
+}
+
+.row-color{
+  background-color:#ffcccc;
+}
+
+.row-color2{
+  background-color:#ffb3b3;
+}
+
+.check{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.check p{
+  text-align:center;
+  margin: 10px 0;
+  font-size:bold;
+}
+.enCours{
+color:red
+}
+
+.terminé{
+color: green;
+}
+.filter{
+  width:100px;
+}
