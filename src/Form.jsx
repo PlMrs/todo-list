@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getLabels, getTodos, postTodo, updateTodo } from './api';
-import { myfilter } from './Filter';
+import { getLabels} from './api';
 function Form({todo,type, onSubmit}){
   const [newTodo, setNewTodo] = useState({
     "titre" : "",

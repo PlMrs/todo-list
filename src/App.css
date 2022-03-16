@@ -44,7 +44,7 @@ color: green;
 }
 .todo-list{
   width:50%;
-  height: calc(100vh - 54px);
+  height: 85vh;
   overflow:auto;
   float:left
 }
