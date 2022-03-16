@@ -1,0 +1,52 @@
+ /* // register express routes from defined application routes
+    TodosRoutes.forEach(route => {
+        (app as any)[route.method](route.route, (req: Request, res: Response, next: Function) => {
+            const result = (new (route.controller as any))[route.action](req, res, next);
+            if (result instanceof Promise) {
+                result.then(result => result !== null && result !== undefined ? res.send(result) : undefined);
+
+            } else if (result !== null && result !== undefined) {
+                res.json(result);
+            }
+        });
+    });
+    // register express routes from defined application routes
+    TodosLabels.forEach(route => {
+        (app as any)[route.method](route.route, (req: Request, res: Response, next: Function) => {
+            const result = (new (route.controller as any))[route.action](req, res, next);
+            if (result instanceof Promise) {
+                result.then(result => result !== null && result !== undefined ? res.send(result) : undefined);
+
+            } else if (result !== null && result !== undefined) {
+                res.json(result);
+            }
+        });
+    });*/
+
+
+    // insert new Todos for test
+    /*await connection.manager.save(connection.manager.create(Todos, {
+        titre : "Un titre",
+        description : "Une desc",
+        dueDate : new Date(),
+        statut : "terminé",
+        labelId: 1,
+        creationDate: new Date()
+    }));
+    await connection.manager.save(connection.manager.create(Todos, {
+        titre : "Un deuxième titre",
+        description : "Une deuxième desc",
+        dueDate : new Date(),
+        statut : "en cours",
+        labelId: 0,
+        creationDate: new Date()
+    }));*/
+    // insert new Labels for test
+    /*await connection.manager.save(connection.manager.create(Labels, {
+        titre: "Front-End",
+        color: "#FF5733"
+    }));
+    await connection.manager.save(connection.manager.create(Labels, {
+        titre: "Back-End",
+        color: "#003DB1"
+    }));*/
