@@ -72,7 +72,7 @@ import Button from "@material-ui/core/Button";
            <ul>
               <li className="check"><p onClick={() => toggleStatut(todo)} className={getStyleTodo(todo)}>{todo.statut}</p></li>
               <li className="delete"><button onClick={() => removeList(todo.id)}>Supprimer</button></li>
-              <li className="">
+              <li className="modifier">
                 <Button  onClick={() => setOpenId(todo.id)}>Modifier</Button>
                 
                   <Dialog open={openId === todo.id} onClose={() => setOpenId(null)}>

@@ -120,3 +120,8 @@ padding:20px;
   width:100%;
   padding:0;
 }
+.modifier{
+  display:flex;
+  justify-content: center;
+  margin-top:5px
+}

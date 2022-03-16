@@ -13,6 +13,7 @@ function App() {
     getTodos().then(res => {
       setDefaultList(res)
       setList(res)
+      setLoaded(true)
     })
   }, []);
   const filterTodo = (filter) =>{
@@ -25,10 +26,6 @@ function App() {
     newTodo.creationDate = new Date()
     postTodo(newTodo).then(res => res.status === 201? getTodos().then(res => setList(res)) : '' );  
   }
-  
-  setTimeout(()=>{
-    setLoaded(true);
-  }, 2000)
   return (
     <div>
       <h1 class="site-title">Ma todo</h1>
