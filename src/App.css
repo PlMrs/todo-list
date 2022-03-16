@@ -2,47 +2,35 @@
   padding:0;
   margin:0;
 }
-.form{
-  clear:both
-}
 .todo-list ul{
   list-style-type: none;
 }
 .todo-list ul li:first-child ul > li:first-child{
   border-top:none;
 }
+.todo-list > ul > li{
+  display:flex;
+  padding: 10px 0
+}
 .todo-list > ul > li ul:first-child{
   width: 70%;
-  float: left;
 }
 .todo-list > ul > li ul{
   width: 30%;
-  float: right;
 }
 .todo-list > ul > li ul > li:first-child{
   border-top: 1px solid black;
 }
-.todo-list ul li:first-child p:first-child span{
-  margin-right:70px;
-}
-
-.row-color{
-  background-color:#ffcccc;
-}
-
-.row-color2{
-  background-color:#ffb3b3;
-}
 
 .check{
   text-align: center;
-  margin: 20px 0;
+  padding: 20px 0;
 }
-
 .check p{
   text-align:center;
   margin: 10px 0;
   font-size:bold;
+  cursor:pointer
 }
 .enCours{
 color:red
@@ -53,4 +41,82 @@ color: green;
 }
 .filter{
   width:100px;
+}
+.todo-list{
+  width:50%;
+  height: calc(100vh - 54px);
+  overflow:auto;
+  float:left
+}
+.todo-list::-webkit-scrollbar{
+  display:none;
+}
+.todoTitre{
+  font-size: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+.todoCréation{
+  float:left;
+  font-weight: 300;
+  font-size: 15px;
+}
+.todoCat{
+  float:right;
+  font-weight: 300;
+    font-size: 15px;
+}
+.todoCat span{
+  font-weight:600
+}
+.todoDesc{
+  clear:both;
+  padding-top:10px;
+  padding-bottom:20px
+}
+.todoDesc p:first-child{
+  font-weight:bold
+}
+.todoDead{
+  font-weight:600;
+  color:red
+}
+.delete{
+  display: flex;
+  justify-content: center;
+}
+.delete button{
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  cursor:pointer;
+}
+.form-container input {
+  width: 100%;
+}
+.form{
+  display:flex;
+  justify-content: center;
+  float:right;
+  width:50%;
+}
+.form form{
+  width:50%;
+padding:20px;
+}
+.form form *{
+  width: 100%
+}
+.site-title{
+  text-align: center;
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 40px;
+}
+.MuiDialogContent-root .form, .MuiDialogContent-root form{
+  width:100%;
+  padding:0;
 }

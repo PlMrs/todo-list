@@ -1,27 +1,39 @@
 import { useEffect, useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import TodoList from './TodoList.jsx'
 import Form from './Form.jsx'
-import baseList from './todo-list.json'
-import Filter from './Filter.jsx'
-
+import axios from 'axios'
+import { getTodos, postTodo } from './api'
+import { myfilter } from './Filter'
 function App() {
-  const [allList, setList] = useState(baseList);
+  const [allList, setList] = useState([]);
+  const [filters, setfilters] = useState([]);
+  const [defaultList, setDefaultList] = useState([]);
   useEffect(()=>{
-    if(localStorage.getItem('data')){
-      setList(JSON.parse(localStorage.getItem('data')))
-    }
+    getTodos().then(res => {
+      setDefaultList(res)
+      setList(res)
+    })
   }, []);
   useEffect(()=>{
     localStorage.setItem('data', JSON.stringify(allList));
   }, [allList]);
-
+  const filterTodo = (filter) =>{
+    const filtered = myfilter(filter, allList)
+    console.log(filtered)
+    filtered.length === 0 ? setList(currentList => defaultList) : setList(currentList =>  filtered)
+  }
+  const onTodoCreated = (newTodo) => {
+    newTodo.statut = "en cours"
+    newTodo.creationDate = new Date()
+    postTodo(newTodo).then(res => res.status === 201? getTodos().then(res => setList(res)) : '' );  
+  }
   return (
     <div>
-      <TodoList  allList={allList} setList={setList} />
-      <Form allList={allList} setList={setList} type="addForm" />
-      <Form allList={allList} setList={setList} type="filter" />
+      <h1 class="site-title">Ma todo</h1>
+      <TodoList  allList={allList} setList={setList} forReload={()=>{getTodos().then(res => setList(res))}} />
+      <Form allList={allList} setList={setList} type="addForm" onSubmit={onTodoCreated} />
+      <Form allList={allList} defaultList={defaultList} setList={setList} type="filter" onSubmit={filterTodo}/>
     </div>
   )
   
