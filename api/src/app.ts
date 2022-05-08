@@ -22,7 +22,7 @@ createConnection().then(async connection => {
     origin: allowedOrigins
     };
 
-    // Then pass these options to cors:
+    // Ajout des options CORS:
     app.use(cors(options));
 
     //Parse de toutes les body envoyés par l'utilisateur en JSON
